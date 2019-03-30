@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {AlbumsService} from '../../services/albums.service';
-import {AlbumEventsService} from '../../services/album-events.service';
-import {Album} from '../../interfaces/Album';
-import {AlertMessageService} from '../../services/alert-message.service';
-import {EditAlbumService} from '../../services/edit-album.service';
+import { Component, OnInit } from '@angular/core';
+import { AlbumsService } from '../../services/albums.service';
+import { AlbumEventsService } from '../../services/album-events.service';
+import { Album } from '../../interfaces/Album';
+import { AlertMessageService } from '../../services/alert-message.service';
+import { EditAlbumService } from '../../services/edit-album.service';
 
 @Component({
   selector: 'app-add-album-form',
@@ -31,7 +31,6 @@ export class AddAlbumFormComponent implements OnInit {
     this.editAlbumService.albumEditEventObservableSubject.subscribe((data: Album) => {
       if (Object.keys(data).length !== 0) {
         this.isEdited = true;
-        // @ts-ignore
         this.formInput = data;
       } else {
         this.isEdited = false;

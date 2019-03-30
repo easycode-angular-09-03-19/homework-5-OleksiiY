@@ -1,8 +1,8 @@
-import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
-import {Album} from '../../interfaces/Album';
-import {AlbumsService} from '../../services/albums.service';
-import {AlertMessageService} from '../../services/alert-message.service';
-import {EditAlbumService} from '../../services/edit-album.service';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Album } from '../../interfaces/Album';
+import { AlbumsService } from '../../services/albums.service';
+import { AlertMessageService } from '../../services/alert-message.service';
+import { EditAlbumService } from '../../services/edit-album.service';
 
 @Component({
   selector: 'app-album-item',

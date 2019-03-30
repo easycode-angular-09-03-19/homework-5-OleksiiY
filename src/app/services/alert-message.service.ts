@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class AlertMessageService {
   constructor() {
   }
 
-  emitAddNewAlertMessage(value) {
+  emitAddNewAlertMessage(value): void {
     this.alertAddEventSource.next(value);
   }
 

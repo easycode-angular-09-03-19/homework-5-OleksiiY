@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {AlbumsService} from '../../services/albums.service';
-import {Album} from '../../interfaces/Album';
-import {AlbumEventsService} from '../../services/album-events.service';
+import { Component, OnInit } from '@angular/core';
+import { AlbumsService } from '../../services/albums.service';
+import { Album } from '../../interfaces/Album';
+import { AlbumEventsService } from '../../services/album-events.service';
 
 @Component({
   selector: 'app-albums-list',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
-import {Album} from '../interfaces/Album';
+import { BehaviorSubject } from 'rxjs';
+import { Album } from '../interfaces/Album';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,8 @@ export class AlbumEventsService {
 
   constructor() {}
 
-  emitAddNewAlbum(value: Album) {
+  emitAddNewAlbum(value: Album): void {
     this.albumAddEventSource.next(value);
   }
+
 }

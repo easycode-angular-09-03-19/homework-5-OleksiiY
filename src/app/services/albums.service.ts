@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Album} from '../interfaces/Album';
-import {environment} from '../../environments/environment';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Album } from '../interfaces/Album';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +19,14 @@ export class AlbumsService {
     return this.http.get<Album[]>(`${this.apiUrl}/albums`);
   }
 
-  addNewAlbum(value: Album) {
+  addNewAlbum(value: Album): Observable<Object> {
     return this.http.post(`${this.apiUrl}/albums`, value);
   }
 
-  deleteAlbum(id) {
+  deleteAlbum(id): Observable<Object> {
    return this.http.delete(`${this.apiUrl}/albums/${id}`);
   }
-  editAlbum(album: Album) {
+  editAlbum(album: Album): Observable<Object> {
     return this.http.put(`${this.apiUrl}/albums/${album.id}`, album);
   }
 }
