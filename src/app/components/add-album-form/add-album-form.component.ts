@@ -24,7 +24,6 @@ export class AddAlbumFormComponent implements OnInit {
     public albumEvents: AlbumEventsService,
     public alertMessageService: AlertMessageService,
     public editAlbumService: EditAlbumService
-
   ) {
   }
 
@@ -66,7 +65,8 @@ export class AddAlbumFormComponent implements OnInit {
       form.reset();
     }, (err) => {
       console.log(err);
-      this.isEdited = true;
+      this.formInput.title = 'Ошибка сервера';
+      this.isEdited = false;
     });
   }
 }

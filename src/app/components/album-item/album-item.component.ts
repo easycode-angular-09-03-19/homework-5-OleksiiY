@@ -14,6 +14,7 @@ export class AlbumItemComponent implements OnInit {
 
   @Input() item: Album;
   @Output() outputDeleteAlbum = new EventEmitter();
+
   constructor(
     public albumService: AlbumsService,
     public alertMessageService: AlertMessageService,
@@ -28,8 +29,8 @@ export class AlbumItemComponent implements OnInit {
         this.isEdited = false;
       }
     });
-
   }
+
   onDeleteItem() {
     // Передаю объект вместо ID, так как после создания нового item album, сервер возвращает одинаковый с ID
     // Поэтому поиск идет по title и ID
