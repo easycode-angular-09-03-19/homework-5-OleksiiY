@@ -1,0 +1,55 @@
+<div class="container mt-5" *ngIf="!isEdited">
+  <div class="row">
+    <div class="col col-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Add new album</h5>
+          <form #addAlbumForm="ngForm" (ngSubmit)="onFormSubmit(addAlbumForm)">
+            <div class="alert alert-danger" *ngIf="albumTitle.invalid && albumTitle.dirty">Error message</div>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="album.title"
+                   name="title"
+                   placeholder="Album title"
+                   #albumTitle="ngModel"
+                   required
+                   maxlength="100"
+                   minlength="2"
+            >
+            <button class="btn btn-success mt-3" [disabled]="addAlbumForm.invalid">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt-5" *ngIf="isEdited">
+  <div class="row">
+    <div class="col col-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit album id  {{formInput.id}}</h5>
+          <form #addAlbumForm="ngForm" (ngSubmit)="onEditFormSubmit(addAlbumForm)">
+            <div class="alert alert-danger" *ngIf="albumTitle.invalid && albumTitle.dirty">Error message</div>
+            <input type="text"
+                   class="form-control"
+                   [(ngModel)]="formInput.title"
+                   name="title"
+                   placeholder="Album title"
+                   #albumTitle="ngModel"
+                   required
+                   maxlength="100"
+                   minlength="2"
+            >
+            <button class="btn btn-success mt-3" [disabled]="addAlbumForm.invalid">Edit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="isEditedClicked">test ng if</p>
+
