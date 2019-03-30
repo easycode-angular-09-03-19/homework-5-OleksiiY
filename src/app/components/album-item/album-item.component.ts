@@ -32,10 +32,8 @@ export class AlbumItemComponent implements OnInit {
   }
 
   onDeleteItem() {
-    // Передаю объект вместо ID, так как после создания нового item album, сервер возвращает одинаковый с ID
-    // Поэтому поиск идет по title и ID
     const albumItem = this.item;
-    this.albumService.deleteAlbum(albumItem).subscribe((data: Album) => {
+    this.albumService.deleteAlbum(albumItem.id).subscribe((data: Album) => {
       this.outputDeleteAlbum.emit(albumItem);
       const deleteAlbumAlert: any = albumItem;
       deleteAlbumAlert.action = 'delete';
