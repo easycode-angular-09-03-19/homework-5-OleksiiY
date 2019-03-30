@@ -13,6 +13,7 @@ export class AlertMessageComponent implements OnInit {
   public isDelete: boolean;
   public isAdded: boolean;
   public isEdited: boolean;
+  public isServerError: boolean;
 
   constructor(
     public alertMessageService: AlertMessageService
@@ -47,6 +48,15 @@ export class AlertMessageComponent implements OnInit {
           this.showMessage = '';
           this.isEdited = false;
         }, 2000);
+      }
+
+      if (this.onSuccessDelete.action === 'ServerError') {
+        this.isServerError = true;
+        this.showMessage = `Ошибка сервера, удалите Item или нажмите Cancel для продолжения`;
+        setTimeout(() => {
+          this.showMessage = '';
+          this.isServerError = false;
+        }, 2500);
       }
 
     });

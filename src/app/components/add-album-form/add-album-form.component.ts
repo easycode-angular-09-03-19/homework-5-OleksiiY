@@ -67,6 +67,9 @@ export class AddAlbumFormComponent implements OnInit {
       console.log(err);
       this.formInput.title = 'Ошибка сервера';
       this.isEdited = false;
+      const addAlbumAlert: any = this.formInput;
+      addAlbumAlert.action = 'ServerError';
+      this.alertMessageService.emitAddNewAlertMessage(addAlbumAlert);
     });
   }
 }
