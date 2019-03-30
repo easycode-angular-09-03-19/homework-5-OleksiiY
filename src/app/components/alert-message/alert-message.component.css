@@ -1,0 +1,6 @@
+.alert-item{
+  position: fixed;
+  top:0;
+  z-index: 1001;
+  opacity: 0.9;
+}
