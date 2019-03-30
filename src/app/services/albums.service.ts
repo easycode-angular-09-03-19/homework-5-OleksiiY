@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Album } from '../interfaces/Album';
 import { environment } from '../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,14 +20,15 @@ export class AlbumsService {
     return this.http.get<Album[]>(`${this.apiUrl}/albums`);
   }
 
-  addNewAlbum(value: Album): Observable<Object> {
-    return this.http.post(`${this.apiUrl}/albums`, value);
+  addNewAlbum(value: Album): Observable<Album> {
+    return this.http.post<Album>(`${this.apiUrl}/albums`, value);
   }
 
-  deleteAlbum(id): Observable<Object> {
-   return this.http.delete(`${this.apiUrl}/albums/${id}`);
+  deleteAlbum(id): Observable<Album> {
+   return this.http.delete<Album>(`${this.apiUrl}/albums/${id}`);
   }
-  editAlbum(album: Album): Observable<Object> {
-    return this.http.put(`${this.apiUrl}/albums/${album.id}`, album);
+
+  editAlbum(album: Album): Observable<Album> {
+    return this.http.put<Album>(`${this.apiUrl}/albums/${album.id}`, album);
   }
 }
